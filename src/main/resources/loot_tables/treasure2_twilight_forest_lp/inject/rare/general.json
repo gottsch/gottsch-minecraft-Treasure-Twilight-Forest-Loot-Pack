@@ -16,13 +16,12 @@
 				"type": "loot_table",
 				"name": "twilightforest:structures/tower_library/tower_library",
 				"weight": 1
-			}
+			},
 			{
 				"type": "loot_table",
 				"name": "twilightforest:enchanted_book/books",
 				"weight": 1
 			}
-
 		]
 	},
 	{

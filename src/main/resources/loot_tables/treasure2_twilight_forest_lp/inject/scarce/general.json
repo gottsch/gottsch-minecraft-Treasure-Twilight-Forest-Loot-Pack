@@ -6,8 +6,7 @@
 	"pools": [{
 		"name": "tf_scarce_items",
 		"rolls": 1,
-		"entries": [
-			{
+		"entries": [{
 				"type": "loot_table",
 				"name": "twilightforest:structures/hill_3/hill_3",
 				"weight": 1
