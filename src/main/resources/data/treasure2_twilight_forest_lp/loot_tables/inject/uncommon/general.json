@@ -9,12 +9,12 @@
 		"entries": [
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/hill_2/hill_2",
+				"name": "twilightforest:structures/hill_2",
 				"weight": 1
 			},
 						{
 				"type": "loot_table",
-				"name": "twilightforest:structures/hedge_maze/hedge_maze",
+				"name": "twilightforest:structures/hedge_maze",
 				"weight": 1
 			}
 		]

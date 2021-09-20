@@ -9,12 +9,7 @@
 		"entries": [
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/hill_3/hill_3",
-				"weight": 1
-			},
-			{
-				"type": "loot_table",
-				"name": "twilightforest:enchanted_book/books",
+				"name": "twilightforest:structures/hill_3",
 				"weight": 1
 			}
 		]
@@ -25,17 +20,17 @@
 		"entries": [
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/labyrinth_vault/labyrinth_vault",
+				"name": "twilightforest:structures/labyrinth_vault",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/labyrinth_dead_end/labyrinth_dead_end",
+				"name": "twilightforest:structures/labyrinth_dead_end",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/tower_room/tower_room",
+				"name": "twilightforest:structures/tower_room",
 				"weight": 1
 			}
 		]
@@ -46,27 +41,27 @@
 		"entries": [
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/troll_garden/troll_garden",
+				"name": "twilightforest:structures/troll_garden",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/troll_vault_/troll_vault",
+				"name": "twilightforest:structures/troll_vault",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/aurora_room/aurora_room",
+				"name": "twilightforest:structures/aurora_room",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/aurora_cache/aurora_cache",
+				"name": "twilightforest:structures/aurora_cache",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/basement/basement",
+				"name": "twilightforest:structures/basement",
 				"weight": 1
 			}
 		]

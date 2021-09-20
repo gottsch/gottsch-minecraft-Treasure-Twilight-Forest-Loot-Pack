@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
     }
 }
         
@@ -27,7 +27,7 @@ minecraft {
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
     //mappings channel: 'snapshot', version: '20171003-1.12'
-    mappings channel: 'snapshot', version: '20171003-1.12'
+    mappings channel: "${mappings_channel}", version: "${mappings_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -56,13 +56,13 @@ minecraft {
     }
 }
 
-def gottschcore_path="../gottsch-minecraft-GottschCore/build/libs/GottschCore-mc${mc_version}-f${forge_version}-v${gottschcore_version}.jar"
+def gottschcore_path="../gottsch-minecraft-GottschCore/build/libs/GottschCore-mc${mc_version}-f${gottschcore_forge_version}-v${gottschcore_version}.jar"
 def treasure2_path="../Treasure/build/libs/Treasure2-mc${mc_version}-f${forge_version}-v${treasure2_version}.jar"
 println gottschcore_path
 println treasure2_path
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
     compile files(gottschcore_path)
 	compile files(treasure2_path)
 }
@@ -101,7 +101,8 @@ task deleteOldJar(type: Delete) {
             include "**/${mod_name}-*.*"
         }
     }
-task copyJar << {
+    
+task copyJar(dependsOn: [jar]) {
 	// iterate over the array with destination paths
  	destinations.each { destination ->
         // for every destination define new CopySpec

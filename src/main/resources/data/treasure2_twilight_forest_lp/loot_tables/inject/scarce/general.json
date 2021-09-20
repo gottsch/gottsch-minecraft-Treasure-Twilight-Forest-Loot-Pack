@@ -8,22 +8,17 @@
 		"rolls": 1,
 		"entries": [{
 				"type": "loot_table",
-				"name": "twilightforest:structures/hill_3/hill_3",
+				"name": "twilightforest:structures/hill_3",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:enchanted_book/books",
+				"name": "twilightforest:structures/labyrinth_room",
 				"weight": 1
 			},
 			{
 				"type": "loot_table",
-				"name": "twilightforest:structures/labyrinth_room/labyrinth_room",
-				"weight": 1
-			},
-			{
-				"type": "loot_table",
-				"name": "twilightforest:structures/tower_library/tower_library",
+				"name": "twilightforest:structures/tower_library",
 				"weight": 1
 			}
 		]
