@@ -9,6 +9,7 @@ import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.gottschcore.mod.AbstractMod;
 import com.someguyssoftware.gottschcore.mod.IMod;
 import com.someguyssoftware.gottschcore.version.BuildVersion;
+import com.someguyssoftware.treasure2.api.TreasureApi;
 import com.someguyssoftware.treasure_twilight_forest_lootpack.config.ModConfig;
 import com.someguyssoftware.treasure_twilight_forest_lootpack.eventhandler.WorldEventHandler;
 
@@ -27,7 +28,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = TreasureTwilightForestLP.MODID, 
 name = TreasureTwilightForestLP.NAME, 
 version = TreasureTwilightForestLP.VERSION, 
-dependencies = "required-after:gottschcore@[1.14.0,);required-after:treasure2@[1.14.0,);required-after:twilightforest@[3.11.1021,)", 
+dependencies = "required-after:gottschcore@[1.14.0,);required-after:treasure2@[2.0.0,);required-after:twilightforest@[3.11.1021,)", 
 acceptedMinecraftVersions = "[1.12.2]", 
 updateJSON = TreasureTwilightForestLP.UPDATE_JSON_URL)
 @Credits(values = { "Treasure2: Twilight Forest Loot Pack was first developed by Mark Gottschling on June 11, 2021."})
@@ -35,7 +36,7 @@ public class TreasureTwilightForestLP extends AbstractMod {
 	// constants
 	public static final String MODID = "treasure2_twilight_forest_lp";
 	protected static final String NAME = "Treasure2TwilightForestLP";
-	protected static final String VERSION = "1.0.0";
+	protected static final String VERSION = "2.0.0";
 
 	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure-Twilight-Forest-Loot-Pack/1.12.2-master/update.json";
 
@@ -68,6 +69,8 @@ public class TreasureTwilightForestLP extends AbstractMod {
 
 		// register additional events
 		MinecraftForge.EVENT_BUS.register(new WorldEventHandler(getInstance()));
+		// create the treasure registries
+		TreasureApi.registerLootTables(MODID);
 	}
 
 	@EventHandler
