@@ -1,14 +1,13 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://maven.minecraftforge.net' }
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
-        
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
@@ -18,101 +17,198 @@ version = "mc${mc_version}-f${forge_version}-${mod_version_type}${mod_version}"
 group = "${package_group}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${mod_name}"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    //mappings channel: 'snapshot', version: '20171003-1.12'
-    mappings channel: "${mappings_channel}", version: "${mappings_version}"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+   mappings channel: 'official', version: '1.16.5'
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
+
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            property 'forge.enabledGameTestNamespaces', 'treasure2_twilight_forest_lp'
+
+            mods {
+                treasure2_twilight_forest_lp {
+                    source sourceSets.main
+                }
+            }
         }
 
         server {
+            workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
+
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            property 'forge.enabledGameTestNamespaces', 'treasure2_twilight_forest_lp'
+
+            mods {
+                treasure2_twilight_forest_lp {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        // This run config launches GameTestServer and runs all registered gametests, then exits.
+        // By default, the server will crash when no gametests are provided.
+        // The gametest system is also enabled by default for other run configs under the /test command.
+        gameTestServer {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+            property 'forge.logging.console.level', 'debug'
+
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            property 'forge.enabledGameTestNamespaces', 'treasure2_twilight_forest_lp'
+
+            mods {
+                treasure2_twilight_forest_lp {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+            property 'forge.logging.console.level', 'debug'
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', 'treasure2_twilight_forest_lp', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                treasure2_twilight_forest_lp {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
 
-def gottschcore_path="../gottsch-minecraft-GottschCore/build/libs/GottschCore-mc${mc_version}-f${gottschcore_forge_version}-v${gottschcore_version}.jar"
-def treasure2_path="../Treasure/build/libs/Treasure2-mc${mc_version}-f${forge_version}-v${treasure2_version}.jar"
-println gottschcore_path
-println treasure2_path
+// Include resources generated by data generators.
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-    compile files(gottschcore_path)
-	compile files(treasure2_path)
+println "maven dir -> $projectDir"
+println "maven project dir -> $project.projectDir"
+repositories {
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+	// if using maven, DO NOT have the jar in the flatDir dir.
+    maven {
+        url "${project.projectDir}/../maven"
+    }
+    maven {
+        name = "CurseMaven"
+        url = "https://www.cursemaven.com"
+    }
+            
+    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
+     //flatDir {
+      //   dir 'libs'
+    // }
 }
 
+dependencies {
+    // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
+    // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
+    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
+
+	//compileOnly fg.deobf("curse.maven:gottschcore-272450:3556719")
+	compileOnly fg.deobf("someguyssoftware.gottschcore:GottschCore:mc1.16.5-f36.2.34-v1.6.0")
+	compileOnly fg.deobf("gottsch:Treasure-1.16.5:mc1.16.5-f36.2.34-v2.1.1")
+
+	// implementation files(gottschcore_path)
+	//runtimeOnly files(minimap_path)
+    // Examples using mod jars from ./libs
+    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+
+    // For more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+}
+
+// Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
         attributes([
-            "Specification-Title": "${archivesBaseName}",
-            "Specification-Vendor": "Some Guys Software",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": "${archivesBaseName}-${version}",
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"Some Guys Software",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Specification-Title"     : "Treasure2: Twilight Forst Loot Pack",
+                "Specification-Vendor"    : "gottsch",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : "Treasure2: Twilight Forst Loot Pack",
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "gottsch",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
+// Example configuration to allow publishing using the maven-publish plugin
 // This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar') 
+jar.finalizedBy('reobfJar')
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
+// publish.dependsOn('reobfJar')
 
-
-//an array containing destination paths
-def destinations = ["${dest_folder}", "${dest_server_folder}"]
-println destinations[0]
-
-task deleteOldJar(type: Delete) {
-        delete fileTree("${dest_folder}") {
-            include "**/${mod_name}-*.*"
-
-        }
-        delete fileTree("${dest_server_folder}") {
-            include "**/${mod_name}-*.*"
+// run "gradlew build publish" to build jars and generate a maven repo for them
+// run "gradlew build" to build the jars without mavening them
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId project.archivesBaseName
+            artifact jar
+            //artifact sourcesJar
+            //artifact javadocJar
         }
     }
-    
-task copyJar(dependsOn: [jar]) {
-	// iterate over the array with destination paths
- 	destinations.each { destination ->
-        // for every destination define new CopySpec
-        println destination
-        copy {
-            from jar
-            into destination
+    repositories {
+        maven {
+            name="localMaven"
+            url "file:///${project.projectDir}/../maven"
         }
     }
 }
-
-build.dependsOn copyJar
-copyJar.dependsOn deleteOldJar
