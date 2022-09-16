@@ -1,10 +1,11 @@
 {
 	"homepage": "https://www.curseforge.com/minecraft/mc-mods/treasure2-twilight-forest-lp",
 	"promos": {
-		"1.16.5-latest": "1.0.0",
-		"1.16.5-recommended": "1.0.0"
+		"1.16.5-latest": "2.0.0",
+		"1.16.5-recommended": "2.0.0"
 	},
 	"1.16.5": {
-		"1.0.0": "Initial release."
+		"1.0.0": "Initial release.",
+		"2.0.0": "Compatible with Treasure2 v2.1.1"
 	}
 }

@@ -26,10 +26,14 @@ import com.someguyssoftware.gottschcore.annotation.Credits;
 import com.someguyssoftware.gottschcore.annotation.ModInfo;
 import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.gottschcore.mod.IMod;
+import com.someguyssoftware.treasure2.api.TreasureApi;
 import com.someguyssoftware.treasure_twilight_forest_lootpack.eventhandler.WorldEventHandler;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
  * 
@@ -42,16 +46,16 @@ import net.minecraftforge.fml.common.Mod;
 		name = TreasureTwilightForestLP.NAME, 
 		version = TreasureTwilightForestLP.VERSION, 
 		minecraftVersion = "1.16.5", 
-		forgeVersion = "36.2.0", 
+		forgeVersion = "36.2.34", 
 		updateJsonUrl = TreasureTwilightForestLP.UPDATE_JSON_URL)
 @Credits(values = { "Treasure2: Twilight Forest Loot Pack was first developed by Mark Gottschling on June 11, 2021."})
 public class TreasureTwilightForestLP implements IMod {
 	// constants
 	public static final String MODID = "treasure2_twilight_forest_lp";
 	protected static final String NAME = "Treasure2TwilightForestLP";
-	protected static final String VERSION = "1.0.0";
+	protected static final String VERSION = "2.0.0";
 
-	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure-Twilight-Forest-Loot-Pack/1.12.2-master/update.json";
+	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/gottsch/gottsch-minecraft-Treasure-Twilight-Forest-Loot-Pack/1.16.5-master/update.json";
 
 	// logger
 	public static Logger LOGGER = LogManager.getLogger(TreasureTwilightForestLP.NAME);
@@ -63,7 +67,15 @@ public class TreasureTwilightForestLP implements IMod {
 	 */
 	public TreasureTwilightForestLP() {
 		TreasureTwilightForestLP.instance = this;
+		
+		// Register the setup method for modloading
+		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		eventBus.addListener(this::common);
 		MinecraftForge.EVENT_BUS.register(new WorldEventHandler(getInstance()));
+	}
+	
+	private void common(final FMLCommonSetupEvent event) {
+		TreasureApi.registerLootTables(MODID);
 	}
 	
 	@Override

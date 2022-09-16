@@ -19,20 +19,9 @@
  */
 package com.someguyssoftware.treasure_twilight_forest_lootpack.eventhandler;
 
-import java.util.Objects;
-
 import com.someguyssoftware.gottschcore.mod.IMod;
-import com.someguyssoftware.gottschcore.world.WorldInfo;
-import com.someguyssoftware.treasure2.Treasure;
-import com.someguyssoftware.treasure2.loot.LootResources;
-import com.someguyssoftware.treasure2.loot.TreasureLootTableRegistry;
-import com.someguyssoftware.treasure_twilight_forest_lootpack.TreasureTwilightForestLP;
 
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.world.WorldEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class WorldEventHandler {
     	// reference to the mod.
@@ -44,32 +33,8 @@ public class WorldEventHandler {
 	public WorldEventHandler(IMod mod) {
 		setMod(mod);
 	}
-
-	@SubscribeEvent(priority = EventPriority.LOW)
-	public void onWorldLoad(WorldEvent.Load event) {
-        
-		/*
-		 * On load of dimension 0 (overworld), initialize the loot table's context and other static loot tables
-		 */
-		if (WorldInfo.isServerSide((World)event.getWorld())) {
-			ServerWorld world = (ServerWorld) event.getWorld();
-			Treasure.LOGGER.info("In world load event for dimension {}", WorldInfo.getDimension(world).toString());
-			if (WorldInfo.isSurfaceWorld(world)) {
-				// load master loot resources lists
-				try {
-					LootResources lootResources = TreasureLootTableRegistry.readLootResourcesFromFromStream(
-							Objects.requireNonNull(TreasureTwilightForestLP.instance.getClass().getClassLoader().getResourceAsStream("loot_tables/treasure2_twilight_forest_lp/default_loot_tables_list.json"))
-							);
-					Treasure.LOGGER.debug(lootResources);
-					// register mod's loot tables with the LootTableMaster
-					TreasureLootTableRegistry.register(mod.getId(), lootResources);
-				}
-				catch(Exception e) {
-					Treasure.LOGGER.warn("Unable to register loot tables");
-				}
-			}
-		}	
-	}
+	
+	public void onWorldLoad(WorldEvent.Load event) {	}
 	
 	/**
 	 * @return the mod
