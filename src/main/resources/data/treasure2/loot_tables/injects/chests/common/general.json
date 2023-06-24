@@ -8,7 +8,7 @@
 		"rolls": 1,
 		"entries": [{
 			"type": "loot_table",
-			"name": "twilightforest:structures/hill_1/hill_1",
+			"name": "twilightforest:structures/hill_1",
 			"weight": 1
 		}]
 	}]
