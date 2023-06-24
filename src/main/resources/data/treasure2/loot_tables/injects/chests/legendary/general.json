@@ -1,0 +1,57 @@
+{
+  "version" : "2.0.0",
+  "categories" : [ "general" ],
+  "pools" : [ {
+    "name" : "tf_scarce_items",
+    "rolls" : 1,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/hill_3",
+      "weight" : 1
+    } ]
+  }, {
+    "name" : "tf_rare_items",
+    "rolls" : 1,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/labyrinth_vault",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/labyrinth_dead_end",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/tower_room",
+      "weight" : 1
+    } ]
+  }, {
+    "name" : "tf_epic_items",
+    "rolls" : 2,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/troll_garden",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/troll_vault",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/aurora_room",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/aurora_cache",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/basement",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:entities/armored_giant",
+      "weight" : 1
+    } ]
+  } ]
+}

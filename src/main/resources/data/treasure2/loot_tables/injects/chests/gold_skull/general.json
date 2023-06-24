@@ -1,0 +1,36 @@
+{
+  "version" : "2.0.0",
+  "pools" : [ {
+    "name" : "tf_gold_skull_items",
+    "rolls" : 1,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/hill_3",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/tower_library",
+      "weight" : 1
+    } ]
+  }, {
+    "name" : "tf_rare_items",
+    "rolls" : 1,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/labyrinth_vault",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/labyrinth_dead_end",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/tower_room",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/basement",
+      "weight" : 1
+    } ]
+  } ]
+}

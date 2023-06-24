@@ -2,7 +2,7 @@
   "version" : "2.0.0",
   "categories" : [ "general" ],
   "pools" : [ {
-    "name" : "tf_scarce_items",
+    "name" : "tf_epic_items",
     "rolls" : 1,
     "entries" : [ {
       "type" : "loot_table",
@@ -47,6 +47,10 @@
     }, {
       "type" : "loot_table",
       "name" : "twilightforest:structures/basement",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:entities/alpha_yeti",
       "weight" : 1
     } ]
   } ]

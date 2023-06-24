@@ -27,6 +27,10 @@
       "type" : "loot_table",
       "name" : "twilightforest:structures/tower_room",
       "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:entities/alpha_yeti",
+      "weight" : 1
     } ]
   } ]
 }

@@ -1,0 +1,37 @@
+{
+  "version" : "2.0.0",
+  "categories" : [ "general" ],
+  "pools" : [ {
+    "name" : "tf_wither_items",
+    "rolls" : 1,
+    "entries" : [ {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/hill_3",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/labyrinth_room",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/tower_library",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/tower_room",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:structures/fancy_well",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:entities/death_tome",
+      "weight" : 1
+    }, {
+      "type" : "loot_table",
+      "name" : "twilightforest:entities/death_tome_books",
+      "weight" : 1
+    } ]
+  } ]
+}
