@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with TreasureTwilightForestLP.  If not, see <http://www.gnu.org/licenses/lgpl>.
  */
-package com.someguyssoftware.treasure_twilight_forest_lootpack.eventhandler;
+package mod.gottsch.forge.treasure_twilight_forest_lootpack.eventhandler;
 
 import com.someguyssoftware.gottschcore.mod.IMod;
 

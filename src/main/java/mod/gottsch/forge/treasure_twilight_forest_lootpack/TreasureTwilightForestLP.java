@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with TreasureTwilightForestLP.  If not, see <http://www.gnu.org/licenses/lgpl>.
  */
-package com.someguyssoftware.treasure_twilight_forest_lootpack;
+package mod.gottsch.forge.treasure_twilight_forest_lootpack;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,9 +26,9 @@ import com.someguyssoftware.gottschcore.annotation.Credits;
 import com.someguyssoftware.gottschcore.annotation.ModInfo;
 import com.someguyssoftware.gottschcore.config.IConfig;
 import com.someguyssoftware.gottschcore.mod.IMod;
-import com.someguyssoftware.treasure2.api.TreasureApi;
-import com.someguyssoftware.treasure_twilight_forest_lootpack.eventhandler.WorldEventHandler;
 
+import mod.gottsch.forge.treasure2.api.TreasureApi;
+import mod.gottsch.forge.treasure_twilight_forest_lootpack.eventhandler.WorldEventHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

@@ -160,8 +160,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
 
 	//compileOnly fg.deobf("curse.maven:gottschcore-272450:3556719")
-	compileOnly fg.deobf("someguyssoftware.gottschcore:GottschCore:mc1.16.5-f36.2.34-v1.6.0")
-	compileOnly fg.deobf("gottsch:Treasure-1.16.5:mc1.16.5-f36.2.34-v2.1.1")
+	compileOnly fg.deobf("someguyssoftware.gottschcore:GottschCore:mc1.16.5-f36.2.34-v1.8.0")
+	compileOnly fg.deobf("gottsch:Treasure2:mc1.16.5-f36.2.34-v3.0.0")
 
 	// implementation files(gottschcore_path)
 	//runtimeOnly files(minimap_path)
