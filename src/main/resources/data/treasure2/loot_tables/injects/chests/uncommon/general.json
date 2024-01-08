@@ -6,11 +6,11 @@
     "rolls" : 1,
     "entries" : [ {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/hill_2",
+      "name" : "twilightforest:chests/hill_2",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/hedge_maze",
+      "name" : "twilightforest:chests/hedge_maze",
       "weight" : 1
     }, {
       "type" : "loot_table",

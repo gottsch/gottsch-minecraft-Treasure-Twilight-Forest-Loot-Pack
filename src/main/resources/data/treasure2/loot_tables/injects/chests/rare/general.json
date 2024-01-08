@@ -5,11 +5,11 @@
     "rolls" : 1,
     "entries" : [ {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/hill_3",
+      "name" : "twilightforest:chests/hill_3",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/tower_library",
+      "name" : "twilightforest:chests/tower_library",
       "weight" : 1
     } ]
   }, {
@@ -17,15 +17,15 @@
     "rolls" : 1,
     "entries" : [ {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/labyrinth_vault",
+      "name" : "twilightforest:chests/labyrinth_vault",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/labyrinth_dead_end",
+      "name" : "twilightforest:chests/labyrinth_dead_end",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/tower_room",
+      "name" : "twilightforest:chests/tower_room",
       "weight" : 1
     }, {
       "type" : "loot_table",

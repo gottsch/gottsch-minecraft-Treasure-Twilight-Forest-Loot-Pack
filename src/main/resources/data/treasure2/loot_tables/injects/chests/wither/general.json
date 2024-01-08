@@ -6,23 +6,23 @@
     "rolls" : 1,
     "entries" : [ {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/hill_3",
+      "name" : "twilightforest:chests/hill_3",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/labyrinth_room",
+      "name" : "twilightforest:chests/labyrinth_room",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/tower_library",
+      "name" : "twilightforest:chests/tower_library",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/tower_room",
+      "name" : "twilightforest:chests/tower_room",
       "weight" : 1
     }, {
       "type" : "loot_table",
-      "name" : "twilightforest:structures/fancy_well",
+      "name" : "twilightforest:chests/fancy_well",
       "weight" : 1
     }, {
       "type" : "loot_table",
